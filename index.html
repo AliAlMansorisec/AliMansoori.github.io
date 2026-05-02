@@ -1,540 +1,554 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ==================== SEO ==================== -->
-    <title>علي المنصوري | باحث أمني - اختراق تطبيقات الويب والأندرويد</title>
-    <meta name="description" content="علي المنصوري - مختبر اختراق متخصص في أمن تطبيقات الويب والأندرويد. خبير في ثغرات BAC و IDOR و Business Logic.">
-    <meta name="keywords" content="علي المنصوري, أمن المعلومات, اختراق تطبيقات الويب, أمن الأندرويد, BAC, IDOR, Business Logic, Bug Bounty">
-    <meta name="author" content="علي المنصوري">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="content-language" content="ar">
-    
-    <!-- ==================== Open Graph ==================== -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://AliAlMansorisec.github.io">
-    <meta property="og:title" content="علي المنصوري | باحث أمني">
-    <meta property="og:description" content="مختبر اختراق متخصص في الويب والأندرويد. BAC | IDOR | Business Logic">
-    <meta property="og:locale" content="ar_AR">
-    <meta property="og:site_name" content="علي المنصوري">
-    
-    <!-- ==================== Twitter Card ==================== -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="علي المنصوري | باحث أمني">
-    <meta name="twitter:description" content="مختبر اختراق متخصص في الويب والأندرويد">
-    
-    <!-- ==================== أيقونة الموقع ==================== -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
-    
-    <!-- ==================== خطوط Google ==================== -->
-    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- ==================== Font Awesome للأيقونات ==================== -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        body {
-            background: #030507;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 180, 255, 0.03) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(100, 50, 255, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(0, 200, 200, 0.02) 0%, transparent 70%),
-                linear-gradient(135deg, #020304 0%, #0a0f15 100%);
-            color: #f0f0f0;
-            font-family: 'Cairo', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            text-align: right;
-            position: relative;
-        }
+  <!-- SEO -->
+  <title>Ali Al-Mansouri — Security Researcher</title>
+  <meta name="description" content="Ali Al-Mansouri — Penetration tester specializing in Web & Android application security. Expert in BAC, IDOR, and Business Logic vulnerabilities." />
+  <meta name="keywords" content="Ali Al-Mansouri, penetration testing, web security, android security, BAC, IDOR, business logic, bug bounty" />
+  <meta name="author" content="Ali Al-Mansouri" />
+  <meta name="robots" content="index, follow" />
 
-        /* خلفية متحركة - نقاط وشبكة */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="1" fill="rgba(0,150,255,0.08)"/></svg>'),
-                linear-gradient(rgba(0, 150, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 150, 255, 0.02) 1px, transparent 1px);
-            background-size: 60px 60px, 40px 40px, 40px 40px;
-            pointer-events: none;
-            z-index: 0;
-            animation: drift 30s linear infinite;
-        }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://AliAlMansorisec.github.io" />
+  <meta property="og:title" content="Ali Al-Mansouri — Security Researcher" />
+  <meta property="og:description" content="Penetration tester specializing in Web & Android. BAC · IDOR · Business Logic" />
 
-        @keyframes drift {
-            0% { background-position: 0 0, 0 0, 0 0; }
-            100% { background-position: 60px 60px, 40px 40px, 40px 40px; }
-        }
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ali Al-Mansouri — Security Researcher" />
+  <meta name="twitter:description" content="Penetration tester specializing in Web & Android security." />
 
-        /* ==================== البطاقة الرئيسية ==================== */
-        .card {
-            max-width: 680px;
-            width: 100%;
-            background: rgba(8, 12, 18, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(0, 180, 255, 0.15);
-            border-radius: 48px;
-            padding: 2.5rem 2.5rem 2.8rem;
-            box-shadow: 
-                0 40px 80px -20px rgba(0, 0, 0, 0.9),
-                0 0 0 1px rgba(0, 200, 255, 0.05) inset,
-                0 0 60px rgba(0, 100, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-            z-index: 1;
-        }
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡</text></svg>" />
 
-        .card:hover {
-            border-color: rgba(0, 200, 255, 0.25);
-            box-shadow: 
-                0 50px 100px -20px rgba(0, 0, 0, 0.95),
-                0 0 0 1px rgba(0, 200, 255, 0.1) inset,
-                0 0 80px rgba(0, 150, 255, 0.08);
-            transform: translateY(-4px);
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
 
-        /* ==================== الصورة الشخصية ==================== */
-        .profile-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.8rem;
-        }
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(0, 200, 255, 0.4);
-            box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.7),
-                0 0 0 2px rgba(0, 200, 255, 0.1),
-                0 0 40px rgba(0, 150, 255, 0.15);
-            transition: all 0.4s ease;
-            background: linear-gradient(145deg, #0a1520, #050d14);
-        }
+  <style>
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TOKENS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    :root {
+      --void:        #000000;
+      --surface:     #0d0d0d;
+      --raised:      #131313;
+      --line:        rgba(255,255,255,0.07);
+      --line-bright: rgba(255,255,255,0.18);
+      --white:       #ffffff;
+      --silver:      #c8c8c8;
+      --stone:       #888888;
+      --dust:        #555555;
+      --ghost:       #333333;
 
-        .profile-image:hover {
-            border-color: rgba(0, 220, 255, 0.6);
-            box-shadow: 
-                0 20px 45px rgba(0, 0, 0, 0.8),
-                0 0 0 3px rgba(0, 200, 255, 0.15),
-                0 0 60px rgba(0, 180, 255, 0.2);
-            transform: scale(1.02);
-        }
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-mono:    'DM Mono', 'Courier New', monospace;
+      --font-body:    'DM Sans', system-ui, sans-serif;
 
-        /* أيقونة احتياطية في حال عدم وجود صورة */
-        .profile-fallback {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(145deg, #0d1a26, #060f18);
-            border: 3px solid #1a4a6a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 55px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-        }
+      --radius-card: 32px;
+      --radius-pill: 100px;
 
-        /* ==================== شارة الحالة (متصل / متاح) ==================== */
-        .status-badge {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.2rem;
-        }
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    }
 
-        .status {
-            background: rgba(0, 180, 100, 0.12);
-            border: 1px solid rgba(0, 255, 150, 0.2);
-            padding: 5px 18px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            color: #80e0b0;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            backdrop-filter: blur(5px);
-        }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ RESET ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: #00e070;
-            border-radius: 50%;
-            box-shadow: 0 0 15px #00e070;
-            animation: pulse 2s infinite;
-        }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ BODY ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    body {
+      background: var(--void);
+      color: var(--silver);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1.5rem;
+      position: relative;
+      overflow-x: hidden;
+      cursor: default;
+    }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ BACKGROUND ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
 
-        /* ==================== الاسم ==================== */
-        .author-name {
-            font-family: 'Reem Kufi', sans-serif;
-            font-size: 3.6rem;
-            font-weight: 500;
-            line-height: 1.2;
-            margin-bottom: 0.25rem;
-            text-align: center;
-            background: linear-gradient(135deg, #ffffff 0%, #c0d8f0 50%, #a0c8e8 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.5px;
-            text-shadow: 0 2px 20px rgba(0, 150, 255, 0.15);
-        }
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 75%);
+    }
 
-        /* ==================== التخصص ==================== */
-        .specialty-wrapper {
-            text-align: center;
-            margin-bottom: 1.8rem;
-        }
+    .bg-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -55%);
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(255,255,255,0.055) 0%, transparent 62%);
+      border-radius: 50%;
+    }
 
-        .specialty-tag {
-            display: inline-block;
-            background: linear-gradient(145deg, #0e1a26, #071018);
-            color: #b0d8f0;
-            padding: 10px 28px;
-            border-radius: 60px;
-            font-size: 0.95rem;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 1.5px;
-            border: 1px solid #1e405a;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,180,255,0.05) inset;
-            backdrop-filter: blur(5px);
-        }
+    .bg-grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
+    }
 
-        /* ==================== النص التعريفي ==================== */
-        .bio-wrapper {
-            margin-bottom: 2rem;
-        }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CARD ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 3rem 3rem 3.2rem;
+      overflow: hidden;
+      animation: rise 1s var(--ease-out) both;
+    }
 
-        .bio-text {
-            color: #c0d0e0;
-            font-size: 1.05rem;
-            line-height: 1.9;
-            text-align: justify;
-            border-right: 4px solid #1a5a8a;
-            padding-right: 1.5rem;
-        }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 12%; right: 12%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    }
 
-        .highlight {
-            color: #d0e8ff;
-            font-weight: 700;
-            background: linear-gradient(135deg, transparent 0%, rgba(0, 150, 255, 0.08) 100%);
-            padding: 0 4px;
-        }
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -180px; right: -180px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(255,255,255,0.035) 0%, transparent 60%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
-        .ltr-text {
-            direction: ltr;
-            display: inline-block;
-            font-family: 'Courier New', monospace;
-            background: #0f1a26;
-            padding: 3px 10px;
-            border-radius: 8px;
-            font-size: 0.88rem;
-            color: #8ac0e8;
-            border: 1px solid #1e405a;
-            margin: 0 3px;
-        }
+    .card:hover { border-color: rgba(255,255,255,0.13); }
 
-        /* ==================== المهارات ==================== */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 2.2rem;
-        }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(36px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-        .skill-item {
-            background: linear-gradient(145deg, #0c1622, #060e16);
-            border: 1px solid #1a3a52;
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            color: #a8cce8;
-            font-family: 'Courier New', monospace;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
+    .card > * { animation: rise 0.9s var(--ease-out) both; }
+    .card > *:nth-child(1) { animation-delay: 0.05s; }
+    .card > *:nth-child(2) { animation-delay: 0.10s; }
+    .card > *:nth-child(3) { animation-delay: 0.15s; }
+    .card > *:nth-child(4) { animation-delay: 0.20s; }
+    .card > *:nth-child(5) { animation-delay: 0.25s; }
+    .card > *:nth-child(6) { animation-delay: 0.30s; }
+    .card > *:nth-child(7) { animation-delay: 0.35s; }
+    .card > *:nth-child(8) { animation-delay: 0.38s; }
+    .card > *:nth-child(9) { animation-delay: 0.42s; }
 
-        .skill-item:hover {
-            border-color: #2a6a9a;
-            color: #d0e8ff;
-            background: linear-gradient(145deg, #122230, #0a1622);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 20px rgba(0,150,255,0.1);
-        }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ AVATAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .avatar-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.6rem;
+    }
 
-        /* ==================== تذييل ==================== */
-        .footer-note {
-            border-top: 1px solid rgba(0, 150, 255, 0.1);
-            padding-top: 1.5rem;
-            margin-bottom: 1.8rem;
-            color: #80a0b8;
-            font-style: italic;
-            font-size: 0.95rem;
-            text-align: center;
-        }
+    .avatar-ring {
+      position: relative;
+      width: 118px;
+      height: 118px;
+    }
 
-        /* ==================== روابط التواصل الاجتماعي ==================== */
-        .social-section {
-            text-align: center;
-        }
+    .avatar-ring::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        transparent    0%,
+        rgba(255,255,255,0.75) 18%,
+        transparent    36%,
+        rgba(255,255,255,0.12) 58%,
+        transparent    75%,
+        rgba(255,255,255,0.75) 92%,
+        transparent   100%
+      );
+      animation: orbit 6s linear infinite;
+    }
 
-        .social-title {
-            color: #6080a0;
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
+    @keyframes orbit { to { transform: rotate(360deg); } }
 
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-        }
+    .avatar-ring::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      background: var(--surface);
+      border-radius: 50%;
+      z-index: 1;
+    }
 
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: rgba(10, 20, 30, 0.8);
-            border: 1px solid rgba(0, 150, 255, 0.15);
-            padding: 12px 22px;
-            border-radius: 50px;
-            color: #c0d8f0;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            backdrop-filter: blur(5px);
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-            min-width: 130px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
+    .avatar-img {
+      position: absolute;
+      inset: 5px;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 2;
+      background: var(--raised);
+    }
 
-        .social-btn i {
-            font-size: 1.3rem;
-            transition: transform 0.3s ease;
-        }
+    .avatar-fallback {
+      position: absolute;
+      inset: 5px;
+      border-radius: 50%;
+      background: var(--raised);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 46px;
+      z-index: 2;
+    }
 
-        .social-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.4), 0 0 25px rgba(0,150,255,0.1);
-        }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ STATUS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .status-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+    }
 
-        .social-btn:hover i {
-            transform: scale(1.1);
-        }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 5px 18px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--stone);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
 
-        /* ألوان مخصصة لكل منصة عند التحويم */
-        .social-btn.github:hover {
-            background: #1a1e24;
-            border-color: #8b9bb0;
-            color: #ffffff;
-        }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--white);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255,255,255,0.9);
+      animation: blink 2.5s ease-in-out infinite;
+    }
 
-        .social-btn.x:hover {
-            background: #0f1419;
-            border-color: #808080;
-            color: #ffffff;
-        }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.35; }
+    }
 
-        .social-btn.linkedin:hover {
-            background: #0a1a2a;
-            border-color: #0077b5;
-            color: #ffffff;
-        }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ NAME ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .name {
+      font-family: var(--font-display);
+      font-size: 3.6rem;
+      font-weight: 400;
+      text-align: center;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.35rem;
+    }
 
-        .social-btn.telegram:hover {
-            background: #0f1a26;
-            border-color: #26a5e4;
-            color: #ffffff;
-        }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TITLE TAG ━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .title-wrap {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-        .social-btn.instagram:hover {
-            background: #1a0e1a;
-            border-color: #e4405f;
-            color: #ffffff;
-        }
+    .title-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--dust);
+      padding: 7px 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-pill);
+    }
 
-        .social-btn.email:hover {
-            background: #1a1818;
-            border-color: #ea4335;
-            color: #ffffff;
-        }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ DIVIDER ━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line-bright), transparent);
+      margin-bottom: 2rem;
+    }
 
-        /* ==================== تجاوب مع الجوال ==================== */
-        @media (max-width: 600px) {
-            body {
-                padding: 0.8rem;
-            }
-            
-            .card {
-                padding: 1.8rem 1.5rem;
-                border-radius: 36px;
-            }
-            
-            .profile-image, .profile-fallback {
-                width: 100px;
-                height: 100px;
-                font-size: 45px;
-            }
-            
-            .author-name {
-                font-size: 2.8rem;
-            }
-            
-            .bio-text {
-                font-size: 0.95rem;
-                text-align: right;
-            }
-            
-            .social-btn {
-                padding: 10px 16px;
-                min-width: 110px;
-                font-size: 0.85rem;
-            }
-            
-            .social-links {
-                gap: 8px;
-            }
-        }
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ BIO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .bio {
+      margin-bottom: 2.2rem;
+      padding-left: 1.4rem;
+      border-left: 2px solid rgba(255,255,255,0.12);
+    }
 
-        @media (max-width: 380px) {
-            .social-btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
+    .bio p {
+      font-size: 0.975rem;
+      line-height: 1.95;
+      color: var(--stone);
+      font-weight: 300;
+    }
+
+    .bio strong { color: var(--white); font-weight: 500; }
+
+    .bio code {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #b8b8b8;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.09);
+      padding: 2px 9px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SKILLS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 2.2rem;
+    }
+
+    .skill {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.5px;
+      color: var(--dust);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      transition: all 0.28s var(--ease-out);
+      cursor: default;
+      user-select: none;
+    }
+
+    .skill:hover {
+      color: var(--white);
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.22);
+      transform: translateY(-2px);
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FOOTER NOTE ━━━━━━━━━━━━━━━━━━━━━━━ */
+    .footer-note {
+      border-top: 1px solid var(--line);
+      padding-top: 1.6rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--ghost);
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: 0.2px;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SOCIAL ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .social-section { text-align: center; }
+
+    .social-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--ghost);
+      margin-bottom: 1.1rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 11px 20px;
+      border-radius: var(--radius-pill);
+      color: var(--stone);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      min-width: 122px;
+      justify-content: center;
+      transition: all 0.3s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+      transition: left 0.45s ease;
+    }
+
+    .btn i {
+      font-size: 1rem;
+      transition: transform 0.3s var(--ease-out);
+    }
+
+    .btn:hover {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.26);
+      background: rgba(255,255,255,0.07);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+    }
+
+    .btn:hover::before { left: 140%; }
+    .btn:hover i { transform: scale(1.1); }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ RESPONSIVE ━━━━━━━━━━━━━━━━━━━━━━━━ */
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .card { padding: 2rem 1.6rem 2.2rem; border-radius: 26px; }
+      .name { font-size: 2.75rem; }
+      .btn { padding: 10px 16px; min-width: 108px; font-size: 0.78rem; }
+    }
+
+    @media (max-width: 390px) {
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
 </head>
 <body>
-    <main class="card">
-        
-        <!-- الصورة الشخصية -->
-        <div class="profile-wrapper">
-            <!-- إذا أردت استخدام صورة حقيقية، استبدل هذا القسم بـ <img> -->
-            <img class="profile-image" src="profile.jpg" alt="علي المنصوري" 
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="profile-fallback" style="display: none;">🛡️</div>
-        </div>
-        
-        <!-- شارة متاح للعمل -->
-        <div class="status-badge">
-            <span class="status">
-                <span class="status-dot"></span>
-                متاح للاستشارات الأمنية
-            </span>
-        </div>
-        
-        <!-- الاسم -->
-        <h1 class="author-name">علي المنصوري</h1>
-        
-        <!-- التخصص -->
-        <div class="specialty-wrapper">
-            <span class="specialty-tag">Offensive Security • Web & Android</span>
-        </div>
-        
-        <!-- الوصف التعريفي -->
-        <div class="bio-wrapper">
-            <p class="bio-text">
-                مختبر اختراق متخصص في تطبيقات الويب والأندرويد. يركز 
-                <span class="highlight">علي المنصوري</span> 
-                في أبحاثه على ثغرات كسر التحكم في الوصول 
-                <span class="ltr-text">Broken Access Control</span>، 
-                وثغرات الهوية 
-                <span class="ltr-text">IDOR</span>، 
-                والخلل في منطق الأعمال 
-                <span class="ltr-text">Business Logic Vulnerabilities</span>.
-            </p>
-        </div>
-        
-        <!-- وسوم المهارات -->
-        <div class="skills">
-            <span class="skill-item">#Web_App_Pentesting</span>
-            <span class="skill-item">#Android_Security</span>
-            <span class="skill-item">#IDOR_Research</span>
-            <span class="skill-item">#BAC_Analysis</span>
-            <span class="skill-item">#Business_Logic</span>
-            <span class="skill-item">#Bug_Bounty</span>
-        </div>
-        
-        <!-- العبارة الختامية -->
-        <div class="footer-note">
-            ⚡ أساس هذه المنصة لتكون مرجعاً للمحتوى الواقعي القائم على المنهجية والخبرة العملية.
-        </div>
-        
-        <!-- روابط التواصل الاجتماعي -->
-        <div class="social-section">
-            <div class="social-title">تواصل معي</div>
-            <div class="social-links">
-                
-                <!-- GitHub -->
-                <a href="https://github.com/AliAlMansori" class="social-btn github" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                
-                <!-- X (Twitter) -->
-                <a href="https://x.com/username" class="social-btn x" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <span>X</span>
-                </a>
-                
-                <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/username" class="social-btn linkedin" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                    <span>LinkedIn</span>
-                </a>
-                
-                <!-- Telegram -->
-                <a href="https://t.me/username" class="social-btn telegram" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-telegram"></i>
-                    <span>Telegram</span>
-                </a>
-                
-                <!-- Instagram -->
-                <a href="https://instagram.com/username" class="social-btn instagram" target="_blank" rel="noopener">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
-                
-                <!-- Email -->
-                <a href="mailto:your.email@example.com" class="social-btn email">
-                    <i class="fa-regular fa-envelope"></i>
-                    <span>Email</span>
-                </a>
-                
-            </div>
-        </div>
-        
-    </main>
+
+  <!-- Background layers -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+    <div class="bg-grain"></div>
+  </div>
+
+  <!-- Card -->
+  <main class="card" role="main">
+
+    <!-- Avatar -->
+    <div class="avatar-wrap">
+      <div class="avatar-ring" aria-hidden="true">
+        <img
+          class="avatar-img"
+          src="profile.jpg"
+          alt="Ali Al-Mansouri"
+          onerror="this.style.display='none'; document.querySelector('.avatar-fallback').style.display='flex';"
+        />
+        <div class="avatar-fallback">🛡</div>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="status-wrap">
+      <span class="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        Available for security consulting
+      </span>
+    </div>
+
+    <!-- Name -->
+    <h1 class="name">Ali Al-Mansouri</h1>
+
+    <!-- Title -->
+    <div class="title-wrap">
+      <span class="title-tag">Offensive Security · Web &amp; Android</span>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- Bio -->
+    <section class="bio" aria-label="Biography">
+      <p>
+        Penetration tester specializing in <strong>Web &amp; Android</strong> application security.
+        Research focuses on <code>Broken Access Control</code>, reference-based identity vulnerabilities
+        <code>IDOR</code>, and complex <code>Business Logic</code> flaws that automated scanners
+        consistently miss. Committed to methodical, manual-first security assessments.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <div class="skills" role="list" aria-label="Specializations">
+      <span class="skill" role="listitem">Web App Pentesting</span>
+      <span class="skill" role="listitem">Android Security</span>
+      <span class="skill" role="listitem">IDOR Research</span>
+      <span class="skill" role="listitem">Access Control Analysis</span>
+      <span class="skill" role="listitem">Business Logic</span>
+      <span class="skill" role="listitem">Bug Bounty</span>
+      <span class="skill" role="listitem">Manual Code Review</span>
+    </div>
+
+    <!-- Footer note -->
+    <p class="footer-note">
+      ⚡ This platform serves as a reference for real-world findings grounded in methodology and hands-on expertise.
+    </p>
+
+    <!-- Social links -->
+    <nav class="social-section" aria-label="Social links">
+      <p class="social-label">Contact &amp; Profiles</p>
+      <div class="social-links">
+
+        <a href="https://github.com/AliAlMansori" class="btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          GitHub
+        </a>
+
+        <a href="https://x.com/username" class="btn" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          X
+        </a>
+
+        <a href="https://linkedin.com/in/username" class="btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          LinkedIn
+        </a>
+
+        <a href="https://t.me/username" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+          Telegram
+        </a>
+
+        <a href="https://instagram.com/username" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          Instagram
+        </a>
+
+        <a href="mailto:your.email@example.com" class="btn" aria-label="Email">
+          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+          Email
+        </a>
+
+      </div>
+    </nav>
+
+  </main>
+
 </body>
 </html>
