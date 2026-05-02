@@ -1,26 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <title>Ali Al-Mansouri — Security Researcher</title>
-  <meta name="description" content="Ali Al-Mansouri — Penetration tester specializing in Web & Android application security. Expert in BAC, IDOR, and Business Logic vulnerabilities." />
-  <meta name="keywords" content="Ali Al-Mansouri, penetration testing, web security, android security, BAC, IDOR, business logic, bug bounty" />
+  <!-- ═══════════════════════════════════════════════
+       PRIMARY SEO
+  ═══════════════════════════════════════════════ -->
+  <title>Ali Al-Mansouri · Security Researcher & Penetration Tester</title>
+  <meta name="description"
+        content="Ali Al-Mansouri — Elite penetration tester specialising in Web & Android security. Expert in Broken Access Control, IDOR, and Business Logic vulnerabilities. Available for security consulting." />
+  <meta name="keywords"
+        content="Ali Al-Mansouri, penetration tester, web application security, android security, IDOR, broken access control, business logic vulnerabilities, bug bounty, offensive security, security researcher" />
   <meta name="author" content="Ali Al-Mansouri" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://AliAlMansorisec.github.io" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://AliAlMansorisec.github.io" />
-  <meta property="og:title" content="Ali Al-Mansouri — Security Researcher" />
-  <meta property="og:description" content="Penetration tester specializing in Web & Android. BAC · IDOR · Business Logic" />
+  <!-- ═══════════════════════════════════════════════
+       OPEN GRAPH
+  ═══════════════════════════════════════════════ -->
+  <meta property="og:type"        content="profile" />
+  <meta property="og:url"         content="https://AliAlMansorisec.github.io" />
+  <meta property="og:title"       content="Ali Al-Mansouri · Security Researcher" />
+  <meta property="og:description" content="Elite penetration tester. Web & Android security. BAC · IDOR · Business Logic." />
+  <meta property="og:locale"      content="en_US" />
+  <meta property="og:site_name"   content="Ali Al-Mansouri" />
+  <meta property="profile:first_name" content="Ali" />
+  <meta property="profile:last_name"  content="Al-Mansouri" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Ali Al-Mansouri — Security Researcher" />
-  <meta name="twitter:description" content="Penetration tester specializing in Web & Android security." />
+  <!-- ═══════════════════════════════════════════════
+       TWITTER CARD
+  ═══════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Ali Al-Mansouri · Security Researcher" />
+  <meta name="twitter:description" content="Elite penetration tester specialising in Web & Android security." />
+
+  <!-- ═══════════════════════════════════════════════
+       STRUCTURED DATA (JSON-LD)
+  ═══════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ali Al-Mansouri",
+    "jobTitle": "Security Researcher & Penetration Tester",
+    "description": "Elite penetration tester specialising in Web & Android application security.",
+    "url": "https://AliAlMansorisec.github.io",
+    "sameAs": [
+      "https://github.com/AliAlMansori",
+      "https://linkedin.com/in/username",
+      "https://x.com/username"
+    ],
+    "knowsAbout": ["Penetration Testing","Web Application Security","Android Security","IDOR","Broken Access Control","Bug Bounty"]
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡</text></svg>" />
@@ -28,144 +61,156 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TOKENS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* ══════════════════════════════════════════
+       DESIGN TOKENS
+    ══════════════════════════════════════════ */
     :root {
-      --void:        #000000;
-      --surface:     #0d0d0d;
-      --raised:      #131313;
-      --line:        rgba(255,255,255,0.07);
-      --line-bright: rgba(255,255,255,0.18);
-      --white:       #ffffff;
-      --silver:      #c8c8c8;
-      --stone:       #888888;
-      --dust:        #555555;
-      --ghost:       #333333;
+      --void:     #000000;
+      --ink:      #070707;
+      --card:     #0a0a0a;
+      --raised:   #121212;
+      --edge:     rgba(255,255,255,0.06);
+      --edge-hi:  rgba(255,255,255,0.16);
+      --white:    #ffffff;
+      --pearl:    #e8e8e8;
+      --silver:   #b0b0b0;
+      --stone:    #707070;
+      --ghost:    #3a3a3a;
 
-      --font-display: 'DM Serif Display', Georgia, serif;
-      --font-mono:    'DM Mono', 'Courier New', monospace;
-      --font-body:    'DM Sans', system-ui, sans-serif;
+      --serif:  'Cormorant Garamond', Georgia, serif;
+      --mono:   'DM Mono', 'Courier New', monospace;
+      --sans:   'DM Sans', system-ui, sans-serif;
 
-      --radius-card: 32px;
-      --radius-pill: 100px;
-
-      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ RESET ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* ══════════════════════════════════════════
+       BASE
+    ══════════════════════════════════════════ */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ BODY ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    html {
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+
     body {
       background: var(--void);
       color: var(--silver);
-      font-family: var(--font-body);
+      font-family: var(--sans);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2.5rem 1.5rem;
-      position: relative;
+      padding: 2rem 1.5rem;
       overflow-x: hidden;
-      cursor: default;
+      position: relative;
     }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ BACKGROUND ━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    /* ══════════════════════════════════════════
+       CANVAS — ANIMATED SMOKE
+    ══════════════════════════════════════════ */
+    #smoke-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
 
+    /* ══════════════════════════════════════════
+       BACKGROUND LAYERS
+    ══════════════════════════════════════════ */
     .bg-grid {
-      position: absolute;
+      position: fixed;
       inset: 0;
+      z-index: 1;
+      pointer-events: none;
       background-image:
-        linear-gradient(var(--line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 75%);
+        linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 10%, transparent 72%);
     }
 
-    .bg-glow {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -55%);
-      width: 800px; height: 800px;
-      background: radial-gradient(circle, rgba(255,255,255,0.055) 0%, transparent 62%);
-      border-radius: 50%;
-    }
-
-    .bg-grain {
-      position: absolute;
-      inset: 0;
-      opacity: 0.03;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
-    }
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CARD ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* ══════════════════════════════════════════
+       CARD
+    ══════════════════════════════════════════ */
     .card {
       position: relative;
-      z-index: 1;
-      max-width: 680px;
+      z-index: 10;
       width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-card);
-      padding: 3rem 3rem 3.2rem;
+      max-width: 660px;
+      background: rgba(10,10,10,0.82);
+      backdrop-filter: blur(32px) saturate(160%);
+      -webkit-backdrop-filter: blur(32px) saturate(160%);
+      border: 1px solid var(--edge);
+      border-radius: 36px;
+      padding: 3.2rem 3rem 3.4rem;
       overflow: hidden;
-      animation: rise 1s var(--ease-out) both;
+      animation: rise 1.1s var(--ease) both;
     }
 
+    /* top shimmer line */
     .card::before {
       content: '';
       position: absolute;
-      top: 0; left: 12%; right: 12%;
+      top: 0; left: 8%; right: 8%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
     }
 
+    /* corner bloom */
     .card::after {
       content: '';
       position: absolute;
-      top: -180px; right: -180px;
-      width: 420px; height: 420px;
-      background: radial-gradient(circle, rgba(255,255,255,0.035) 0%, transparent 60%);
+      top: -200px; right: -200px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 58%);
       border-radius: 50%;
       pointer-events: none;
     }
 
-    .card:hover { border-color: rgba(255,255,255,0.13); }
-
     @keyframes rise {
-      from { opacity: 0; transform: translateY(36px); }
+      from { opacity: 0; transform: translateY(48px) scale(0.98); }
+      to   { opacity: 1; transform: translateY(0)   scale(1); }
+    }
+
+    /* stagger children */
+    .s1  { animation: fadeUp .9s var(--ease) .08s  both; }
+    .s2  { animation: fadeUp .9s var(--ease) .14s  both; }
+    .s3  { animation: fadeUp .9s var(--ease) .20s  both; }
+    .s4  { animation: fadeUp .9s var(--ease) .26s  both; }
+    .s5  { animation: fadeUp .9s var(--ease) .32s  both; }
+    .s6  { animation: fadeUp .9s var(--ease) .38s  both; }
+    .s7  { animation: fadeUp .9s var(--ease) .44s  both; }
+    .s8  { animation: fadeUp .9s var(--ease) .50s  both; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .card > * { animation: rise 0.9s var(--ease-out) both; }
-    .card > *:nth-child(1) { animation-delay: 0.05s; }
-    .card > *:nth-child(2) { animation-delay: 0.10s; }
-    .card > *:nth-child(3) { animation-delay: 0.15s; }
-    .card > *:nth-child(4) { animation-delay: 0.20s; }
-    .card > *:nth-child(5) { animation-delay: 0.25s; }
-    .card > *:nth-child(6) { animation-delay: 0.30s; }
-    .card > *:nth-child(7) { animation-delay: 0.35s; }
-    .card > *:nth-child(8) { animation-delay: 0.38s; }
-    .card > *:nth-child(9) { animation-delay: 0.42s; }
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ AVATAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* ══════════════════════════════════════════
+       AVATAR
+    ══════════════════════════════════════════ */
     .avatar-wrap {
       display: flex;
       justify-content: center;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.8rem;
     }
 
     .avatar-ring {
       position: relative;
-      width: 118px;
-      height: 118px;
+      width: 116px;
+      height: 116px;
     }
 
     .avatar-ring::before {
@@ -175,15 +220,15 @@
       border-radius: 50%;
       background: conic-gradient(
         from 0deg,
-        transparent    0%,
-        rgba(255,255,255,0.75) 18%,
-        transparent    36%,
-        rgba(255,255,255,0.12) 58%,
-        transparent    75%,
-        rgba(255,255,255,0.75) 92%,
-        transparent   100%
+        transparent 0%,
+        rgba(255,255,255,0.8) 15%,
+        transparent 30%,
+        rgba(255,255,255,0.08) 55%,
+        transparent 70%,
+        rgba(255,255,255,0.8) 90%,
+        transparent 100%
       );
-      animation: orbit 6s linear infinite;
+      animation: orbit 7s linear infinite;
     }
 
     @keyframes orbit { to { transform: rotate(360deg); } }
@@ -192,7 +237,7 @@
       content: '';
       position: absolute;
       inset: 2px;
-      background: var(--surface);
+      background: var(--card);
       border-radius: 50%;
       z-index: 1;
     }
@@ -216,339 +261,466 @@
       display: none;
       align-items: center;
       justify-content: center;
-      font-size: 46px;
+      font-size: 44px;
       z-index: 2;
     }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ STATUS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* ══════════════════════════════════════════
+       STATUS PILL
+    ══════════════════════════════════════════ */
     .status-wrap {
       display: flex;
       justify-content: center;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.3rem;
     }
 
     .status {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 8px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.1);
       padding: 5px 18px;
-      border-radius: var(--radius-pill);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
+      border-radius: 100px;
+      font-family: var(--mono);
+      font-size: 0.68rem;
       color: var(--stone);
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    .status-dot {
-      width: 6px;
-      height: 6px;
+    .dot {
+      width: 6px; height: 6px;
       background: var(--white);
       border-radius: 50%;
-      box-shadow: 0 0 8px rgba(255,255,255,0.9);
-      animation: blink 2.5s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(255,255,255,1);
+      animation: blink 2.8s ease-in-out infinite;
     }
 
     @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.35; }
+      0%,100% { opacity: 1; }
+      50%      { opacity: 0.25; }
     }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ NAME ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* ══════════════════════════════════════════
+       NAME
+    ══════════════════════════════════════════ */
     .name {
-      font-family: var(--font-display);
-      font-size: 3.6rem;
-      font-weight: 400;
-      text-align: center;
+      font-family: var(--serif);
+      font-size: 4rem;
+      font-weight: 300;
       color: var(--white);
-      line-height: 1.08;
-      letter-spacing: -0.5px;
-      margin-bottom: 0.35rem;
-    }
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TITLE TAG ━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .title-wrap {
       text-align: center;
-      margin-bottom: 2rem;
+      line-height: 1.05;
+      letter-spacing: 0.5px;
+      margin-bottom: .3rem;
     }
 
-    .title-tag {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 3px;
+    .name em {
+      font-style: italic;
+      color: var(--pearl);
+    }
+
+    /* ══════════════════════════════════════════
+       ROLE TAG
+    ══════════════════════════════════════════ */
+    .role-wrap { text-align: center; margin-bottom: 2.2rem; }
+
+    .role {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 3.5px;
       text-transform: uppercase;
-      color: var(--dust);
-      padding: 7px 22px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-pill);
+      color: var(--ghost);
+      padding: 6px 20px;
+      border: 1px solid var(--edge);
+      border-radius: 100px;
+      display: inline-block;
     }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ DIVIDER ━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .divider {
+    /* ══════════════════════════════════════════
+       DIVIDER
+    ══════════════════════════════════════════ */
+    .rule {
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--line-bright), transparent);
-      margin-bottom: 2rem;
+      background: linear-gradient(90deg, transparent, var(--edge-hi), transparent);
+      margin-bottom: 2.2rem;
     }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ BIO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* ══════════════════════════════════════════
+       BIO
+    ══════════════════════════════════════════ */
     .bio {
-      margin-bottom: 2.2rem;
+      margin-bottom: 2.4rem;
       padding-left: 1.4rem;
-      border-left: 2px solid rgba(255,255,255,0.12);
+      border-left: 1px solid rgba(255,255,255,0.14);
     }
 
     .bio p {
-      font-size: 0.975rem;
-      line-height: 1.95;
+      font-size: 0.92rem;
+      line-height: 2;
       color: var(--stone);
       font-weight: 300;
     }
 
-    .bio strong { color: var(--white); font-weight: 500; }
+    .bio strong { color: var(--pearl); font-weight: 500; }
 
     .bio code {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: #b8b8b8;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.09);
-      padding: 2px 9px;
-      border-radius: 6px;
-      white-space: nowrap;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      color: #c0c0c0;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 1px 8px;
+      border-radius: 5px;
     }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SKILLS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    /* ══════════════════════════════════════════
+       SKILLS
+    ══════════════════════════════════════════ */
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 2.2rem;
+      gap: 7px;
+      margin-bottom: 2.6rem;
     }
 
-    .skill {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.5px;
-      color: var(--dust);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      transition: all 0.28s var(--ease-out);
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.67rem;
+      letter-spacing: .6px;
+      color: var(--ghost);
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 5px 13px;
+      border-radius: 100px;
+      transition: all .25s var(--ease);
       cursor: default;
       user-select: none;
     }
 
-    .skill:hover {
+    .tag:hover {
       color: var(--white);
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.065);
+      border-color: rgba(255,255,255,0.2);
       transform: translateY(-2px);
     }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FOOTER NOTE ━━━━━━━━━━━━━━━━━━━━━━━ */
-    .footer-note {
-      border-top: 1px solid var(--line);
-      padding-top: 1.6rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      font-size: 0.82rem;
-      color: var(--ghost);
-      font-style: italic;
-      font-weight: 300;
-      letter-spacing: 0.2px;
-    }
-
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SOCIAL ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-    .social-section { text-align: center; }
-
-    .social-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
+    /* ══════════════════════════════════════════
+       SOCIAL LINKS — BIG & PROMINENT
+    ══════════════════════════════════════════ */
+    .connect-label {
+      font-family: var(--mono);
+      font-size: 0.63rem;
       letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--ghost);
-      margin-bottom: 1.1rem;
+      text-align: center;
+      margin-bottom: 1.3rem;
     }
 
-    .social-links {
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 0;
+    }
+
+    .soc {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 9px;
-    }
-
-    .btn {
-      display: inline-flex;
+      flex-direction: column;
       align-items: center;
       gap: 9px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 11px 20px;
-      border-radius: var(--radius-pill);
-      color: var(--stone);
+      padding: 18px 12px 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
       text-decoration: none;
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      font-weight: 400;
-      letter-spacing: 0.3px;
-      min-width: 122px;
-      justify-content: center;
-      transition: all 0.3s var(--ease-out);
+      color: var(--stone);
+      transition: all .32s var(--ease);
       position: relative;
       overflow: hidden;
     }
 
-    .btn::before {
+    /* inner top shimmer */
+    .soc::before {
       content: '';
       position: absolute;
-      top: 0; left: -100%;
-      width: 60%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-      transition: left 0.45s ease;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      opacity: 0;
+      transition: opacity .3s ease;
     }
 
-    .btn i {
-      font-size: 1rem;
-      transition: transform 0.3s var(--ease-out);
+    .soc:hover::before { opacity: 1; }
+
+    .soc-icon {
+      font-size: 1.7rem;
+      line-height: 1;
+      transition: transform .3s var(--ease), color .3s ease;
     }
 
-    .btn:hover {
+    .soc-name {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: .5px;
+      transition: color .3s ease;
+    }
+
+    .soc:hover {
+      background: rgba(255,255,255,0.065);
+      border-color: rgba(255,255,255,0.22);
       color: var(--white);
-      border-color: rgba(255,255,255,0.26);
-      background: rgba(255,255,255,0.07);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+      transform: translateY(-5px);
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(255,255,255,0.04) inset;
     }
 
-    .btn:hover::before { left: 140%; }
-    .btn:hover i { transform: scale(1.1); }
+    .soc:hover .soc-icon { transform: scale(1.15); color: var(--white); }
+    .soc:hover .soc-name { color: var(--pearl); }
 
-    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ RESPONSIVE ━━━━━━━━━━━━━━━━━━━━━━━━ */
-    @media (max-width: 600px) {
+    /* brand accent colours on hover */
+    .soc.github:hover  .soc-icon { color: #ffffff; }
+    .soc.x:hover       .soc-icon { color: #e0e0e0; }
+    .soc.linkedin:hover .soc-icon { color: #70b8e8; }
+    .soc.telegram:hover .soc-icon { color: #62c8f5; }
+    .soc.instagram:hover .soc-icon { color: #e87090; }
+    .soc.email:hover   .soc-icon { color: #f0a080; }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    .footer {
+      margin-top: 2.4rem;
+      border-top: 1px solid var(--edge);
+      padding-top: 1.4rem;
+      text-align: center;
+      font-size: 0.76rem;
+      color: var(--ghost);
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: .2px;
+    }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 580px) {
       body { padding: 1rem; }
-      .card { padding: 2rem 1.6rem 2.2rem; border-radius: 26px; }
-      .name { font-size: 2.75rem; }
-      .btn { padding: 10px 16px; min-width: 108px; font-size: 0.78rem; }
+      .card { padding: 2.2rem 1.6rem 2.6rem; border-radius: 28px; }
+      .name { font-size: 3rem; }
+      .social-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .soc { padding: 15px 8px 13px; border-radius: 16px; }
+      .soc-icon { font-size: 1.45rem; }
+      .soc-name { font-size: 0.65rem; }
     }
 
-    @media (max-width: 390px) {
-      .btn { width: 100%; justify-content: center; }
+    @media (max-width: 380px) {
+      .social-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background layers -->
-  <div class="bg" aria-hidden="true">
-    <div class="bg-grid"></div>
-    <div class="bg-glow"></div>
-    <div class="bg-grain"></div>
-  </div>
+  <!-- ════════════════════════════════════════════
+       ANIMATED SMOKE
+  ════════════════════════════════════════════ -->
+  <canvas id="smoke-canvas" aria-hidden="true"></canvas>
+  <div class="bg-grid" aria-hidden="true"></div>
 
-  <!-- Card -->
-  <main class="card" role="main">
+  <!-- ════════════════════════════════════════════
+       CARD
+  ════════════════════════════════════════════ -->
+  <main class="card" role="main" itemscope itemtype="https://schema.org/Person">
 
     <!-- Avatar -->
-    <div class="avatar-wrap">
+    <div class="avatar-wrap s1">
       <div class="avatar-ring" aria-hidden="true">
-        <img
-          class="avatar-img"
-          src="profile.jpg"
-          alt="Ali Al-Mansouri"
-          onerror="this.style.display='none'; document.querySelector('.avatar-fallback').style.display='flex';"
-        />
+        <img class="avatar-img" src="profile.jpg" alt="Ali Al-Mansouri"
+             onerror="this.style.display='none';document.querySelector('.avatar-fallback').style.display='flex';" />
         <div class="avatar-fallback">🛡</div>
       </div>
     </div>
 
     <!-- Status -->
-    <div class="status-wrap">
+    <div class="status-wrap s2">
       <span class="status">
-        <span class="status-dot" aria-hidden="true"></span>
-        Available for security consulting
+        <span class="dot" aria-hidden="true"></span>
+        Available for consulting
       </span>
     </div>
 
     <!-- Name -->
-    <h1 class="name">Ali Al-Mansouri</h1>
+    <h1 class="name s3" itemprop="name">
+      <em>Ali</em> Al-Mansouri
+    </h1>
 
-    <!-- Title -->
-    <div class="title-wrap">
-      <span class="title-tag">Offensive Security · Web &amp; Android</span>
+    <!-- Role -->
+    <div class="role-wrap s4">
+      <span class="role" itemprop="jobTitle">Security Researcher · Web &amp; Android</span>
     </div>
 
     <!-- Divider -->
-    <div class="divider" aria-hidden="true"></div>
+    <div class="rule s4" aria-hidden="true"></div>
 
     <!-- Bio -->
-    <section class="bio" aria-label="Biography">
+    <section class="bio s5" aria-label="About" itemprop="description">
       <p>
-        Penetration tester specializing in <strong>Web &amp; Android</strong> application security.
-        Research focuses on <code>Broken Access Control</code>, reference-based identity vulnerabilities
-        <code>IDOR</code>, and complex <code>Business Logic</code> flaws that automated scanners
-        consistently miss. Committed to methodical, manual-first security assessments.
+        Penetration tester focused on <strong>Web &amp; Android</strong> security.
+        Deep expertise in <code>Broken Access Control</code>, <code>IDOR</code>,
+        and <code>Business Logic</code> — vulnerabilities automated tools consistently miss.
       </p>
     </section>
 
     <!-- Skills -->
-    <div class="skills" role="list" aria-label="Specializations">
-      <span class="skill" role="listitem">Web App Pentesting</span>
-      <span class="skill" role="listitem">Android Security</span>
-      <span class="skill" role="listitem">IDOR Research</span>
-      <span class="skill" role="listitem">Access Control Analysis</span>
-      <span class="skill" role="listitem">Business Logic</span>
-      <span class="skill" role="listitem">Bug Bounty</span>
-      <span class="skill" role="listitem">Manual Code Review</span>
+    <div class="skills s6" role="list" aria-label="Skills">
+      <span class="tag" role="listitem">Web Pentesting</span>
+      <span class="tag" role="listitem">Android Security</span>
+      <span class="tag" role="listitem">IDOR</span>
+      <span class="tag" role="listitem">Access Control</span>
+      <span class="tag" role="listitem">Business Logic</span>
+      <span class="tag" role="listitem">Bug Bounty</span>
     </div>
 
-    <!-- Footer note -->
-    <p class="footer-note">
-      ⚡ This platform serves as a reference for real-world findings grounded in methodology and hands-on expertise.
-    </p>
+    <!-- Social -->
+    <nav aria-label="Social profiles">
+      <p class="connect-label s7">Connect</p>
+      <div class="social-grid s8">
 
-    <!-- Social links -->
-    <nav class="social-section" aria-label="Social links">
-      <p class="social-label">Contact &amp; Profiles</p>
-      <div class="social-links">
-
-        <a href="https://github.com/AliAlMansori" class="btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <i class="fa-brands fa-github" aria-hidden="true"></i>
-          GitHub
+        <a href="https://github.com/AliAlMansori"
+           class="soc github" target="_blank" rel="noopener noreferrer"
+           aria-label="GitHub profile" itemprop="sameAs">
+          <i class="fa-brands fa-github soc-icon" aria-hidden="true"></i>
+          <span class="soc-name">GitHub</span>
         </a>
 
-        <a href="https://x.com/username" class="btn" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
-          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-          X
+        <a href="https://x.com/username"
+           class="soc x" target="_blank" rel="noopener noreferrer"
+           aria-label="X / Twitter profile" itemprop="sameAs">
+          <i class="fa-brands fa-x-twitter soc-icon" aria-hidden="true"></i>
+          <span class="soc-name">X</span>
         </a>
 
-        <a href="https://linkedin.com/in/username" class="btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-          LinkedIn
+        <a href="https://linkedin.com/in/username"
+           class="soc linkedin" target="_blank" rel="noopener noreferrer"
+           aria-label="LinkedIn profile" itemprop="sameAs">
+          <i class="fa-brands fa-linkedin-in soc-icon" aria-hidden="true"></i>
+          <span class="soc-name">LinkedIn</span>
         </a>
 
-        <a href="https://t.me/username" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
-          Telegram
+        <a href="https://t.me/username"
+           class="soc telegram" target="_blank" rel="noopener noreferrer"
+           aria-label="Telegram">
+          <i class="fa-brands fa-telegram soc-icon" aria-hidden="true"></i>
+          <span class="soc-name">Telegram</span>
         </a>
 
-        <a href="https://instagram.com/username" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-          Instagram
+        <a href="https://instagram.com/username"
+           class="soc instagram" target="_blank" rel="noopener noreferrer"
+           aria-label="Instagram profile" itemprop="sameAs">
+          <i class="fa-brands fa-instagram soc-icon" aria-hidden="true"></i>
+          <span class="soc-name">Instagram</span>
         </a>
 
-        <a href="mailto:your.email@example.com" class="btn" aria-label="Email">
-          <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-          Email
+        <a href="mailto:your.email@example.com"
+           class="soc email" aria-label="Send email">
+          <i class="fa-regular fa-envelope soc-icon" aria-hidden="true"></i>
+          <span class="soc-name">Email</span>
         </a>
 
       </div>
     </nav>
 
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      ⚡ Real-world findings. Methodical assessments. Hands-on expertise.
+    </footer>
+
   </main>
+
+  <!-- ════════════════════════════════════════════
+       SMOKE ENGINE
+  ════════════════════════════════════════════ -->
+  <script>
+  (function () {
+    const canvas = document.getElementById('smoke-canvas');
+    const ctx    = canvas.getContext('2d');
+
+    let W, H, particles = [];
+
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    /* ── Particle ── */
+    class Particle {
+      constructor() { this.reset(true); }
+
+      reset(init = false) {
+        this.x    = W * (.2 + Math.random() * .6);
+        this.y    = init ? H * Math.random() : H + 60;
+        this.vy   = -(0.18 + Math.random() * 0.28);
+        this.vx   = (Math.random() - .5) * 0.18;
+        this.size = 90 + Math.random() * 160;
+        this.life = 0;
+        this.maxLife = 280 + Math.random() * 220;
+        this.rot  = Math.random() * Math.PI * 2;
+        this.rotV = (Math.random() - .5) * 0.003;
+        this.alpha= 0;
+      }
+
+      update() {
+        this.life++;
+        this.x   += this.vx;
+        this.y   += this.vy;
+        this.rot += this.rotV;
+        this.size += 0.22;
+
+        const t = this.life / this.maxLife;
+        // fade in then fade out
+        this.alpha = t < .25
+          ? (t / .25) * 0.12
+          : (1 - (t - .25) / .75) * 0.12;
+
+        if (this.life >= this.maxLife) this.reset();
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rot);
+
+        const g = ctx.createRadialGradient(0, 0, 0, 0, 0, this.size);
+        g.addColorStop(0,   `rgba(255,255,255,${this.alpha})`);
+        g.addColorStop(.5,  `rgba(230,230,230,${this.alpha * .45})`);
+        g.addColorStop(1,   'rgba(0,0,0,0)');
+
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    /* spawn */
+    for (let i = 0; i < 28; i++) particles.push(new Particle());
+
+    /* loop */
+    function loop() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(loop);
+    }
+    loop();
+  })();
+  </script>
 
 </body>
 </html>
