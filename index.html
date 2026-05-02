@@ -8,31 +8,10 @@
   <meta name="author" content="Ali Al-Mansouri" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://AliAlMansorisec.github.io" />
-
   <meta property="og:title"       content="Ali Al-Mansouri · Security Researcher" />
   <meta property="og:description" content="Penetration tester. Web & Android. BAC · IDOR · Business Logic." />
   <meta property="og:type"        content="profile" />
-  <meta property="og:url"         content="https://AliAlMansorisec.github.io" />
-
-  <meta name="twitter:card"        content="summary" />
-  <meta name="twitter:title"       content="Ali Al-Mansouri · Security Researcher" />
-  <meta name="twitter:description" content="Penetration tester. Web & Android. BAC · IDOR · Business Logic." />
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Ali Al-Mansouri",
-    "jobTitle":"Security Researcher & Penetration Tester",
-    "url":"https://AliAlMansorisec.github.io",
-    "sameAs":[
-      "https://github.com/AliAlMansori",
-      "https://linkedin.com/in/username",
-      "https://x.com/username"
-    ]
-  }
-  </script>
-
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ali Al-Mansouri","jobTitle":"Security Researcher","url":"https://AliAlMansorisec.github.io","sameAs":["https://github.com/AliAlMansori","https://linkedin.com/in/username","https://x.com/username"]}</script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,24 +20,24 @@
 
   <style>
     :root {
-      --bg:     #000;
-      --card:   #0b0b0b;
-      --raise:  #141414;
-      --edge:   rgba(255,255,255,0.07);
-      --edgehi: rgba(255,255,255,0.18);
-      --white:  #fff;
-      --pearl:  #e6e6e6;
-      --silver: #a8a8a8;
-      --stone:  #626262;
-      --ghost:  #323232;
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --mono:  'DM Mono', monospace;
-      --sans:  'DM Sans', system-ui, sans-serif;
-      --ease:  cubic-bezier(0.22,1,0.36,1);
+      --bg:    #000;
+      --card:  #0b0b0b;
+      --raise: #141414;
+      --edge:  rgba(255,255,255,0.07);
+      --edgehi:rgba(255,255,255,0.18);
+      --white: #fff;
+      --pearl: #e6e6e6;
+      --silver:#a8a8a8;
+      --stone: #606060;
+      --ghost: #303030;
+      --serif:'Cormorant Garamond',Georgia,serif;
+      --mono: 'DM Mono',monospace;
+      --sans: 'DM Sans',system-ui,sans-serif;
+      --ease: cubic-bezier(0.22,1,0.36,1);
     }
 
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { -webkit-font-smoothing:antialiased; }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{-webkit-font-smoothing:antialiased;}
 
     body {
       background: var(--bg);
@@ -71,351 +50,331 @@
       overflow-x: hidden;
     }
 
-    /* ── subtle grid ── */
     body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
+      content:'';
+      position:fixed;inset:0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: radial-gradient(ellipse 60% 60% at 50% 40%, black, transparent 80%);
-      pointer-events: none;
-      z-index: 0;
+        linear-gradient(rgba(255,255,255,0.016) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,0.016) 1px,transparent 1px);
+      background-size:80px 80px;
+      mask-image:radial-gradient(ellipse 60% 60% at 50% 40%,black,transparent 80%);
+      pointer-events:none;z-index:0;
     }
 
-    /* ══════════════════════
-       CARD
-    ══════════════════════ */
+    /* ══ CARD ══ */
     .card {
-      position: relative;
-      z-index: 1;
-      max-width: 580px;
-      width: 100%;
-      background: var(--card);
-      border: 1px solid var(--edge);
-      border-radius: 32px;
-      padding: 3rem 2.8rem 3.2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-      overflow: hidden;
+      position:relative;z-index:1;
+      max-width:580px;width:100%;
+      background:var(--card);
+      border:1px solid var(--edge);
+      border-radius:32px;
+      padding:3rem 2.8rem 3.2rem;
+      display:flex;flex-direction:column;align-items:center;
+      overflow:hidden;
     }
 
-    /* top shimmer */
     .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 10%; right: 10%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      content:'';position:absolute;
+      top:0;left:10%;right:10%;height:1px;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.22),transparent);
     }
 
-    /* ── entrance animations ── */
-    .card > * {
-      opacity: 0;
-      animation: up .75s var(--ease) forwards;
-    }
-    .card > *:nth-child(1) { animation-delay:.05s; }
-    .card > *:nth-child(2) { animation-delay:.13s; }
-    .card > *:nth-child(3) { animation-delay:.21s; }
-    .card > *:nth-child(4) { animation-delay:.29s; }
-    .card > *:nth-child(5) { animation-delay:.37s; }
-    .card > *:nth-child(6) { animation-delay:.43s; }
-    .card > *:nth-child(7) { animation-delay:.49s; }
+    /* stagger */
+    .card>*{opacity:0;animation:up .75s var(--ease) forwards;}
+    .card>*:nth-child(1){animation-delay:.05s;}
+    .card>*:nth-child(2){animation-delay:.13s;}
+    .card>*:nth-child(3){animation-delay:.21s;}
+    .card>*:nth-child(4){animation-delay:.29s;}
+    .card>*:nth-child(5){animation-delay:.37s;}
+    .card>*:nth-child(6){animation-delay:.43s;}
+    .card>*:nth-child(7){animation-delay:.49s;}
+    .card>*:nth-child(8){animation-delay:.55s;}
 
-    @keyframes up {
-      from { opacity:0; transform:translateY(24px); }
-      to   { opacity:1; transform:translateY(0); }
+    @keyframes up{
+      from{opacity:0;transform:translateY(24px);}
+      to{opacity:1;transform:translateY(0);}
     }
 
-    /* ══════════════════════
-       1. AVATAR
-    ══════════════════════ */
-    .avatar-wrap {
-      margin-bottom: 1.8rem;
-      position: relative;
-      width: 124px;
-      height: 124px;
-      flex-shrink: 0;
+    /* ══ AVATAR ══ */
+    .avatar-wrap{
+      margin-bottom:1.8rem;
+      position:relative;width:124px;height:124px;flex-shrink:0;
     }
-
-    /* spinning arc */
-    .avatar-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      background: conic-gradient(
+    .avatar-wrap::before{
+      content:'';position:absolute;inset:-4px;border-radius:50%;
+      background:conic-gradient(
         from 0deg,
-        transparent 0%, rgba(255,255,255,.9) 12%,
-        transparent 24%, rgba(255,255,255,.08) 50%,
-        transparent 64%, rgba(255,255,255,.9) 88%,
+        transparent 0%,rgba(255,255,255,.9) 12%,
+        transparent 24%,rgba(255,255,255,.08) 50%,
+        transparent 64%,rgba(255,255,255,.9) 88%,
         transparent 100%
       );
-      animation: spin 6s linear infinite;
+      animation:spin 6s linear infinite;
+    }
+    .avatar-wrap::after{
+      content:'';position:absolute;inset:2px;
+      background:var(--card);border-radius:50%;z-index:1;
+    }
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .avatar-img{
+      position:absolute;inset:6px;
+      width:calc(100% - 12px);height:calc(100% - 12px);
+      border-radius:50%;object-fit:cover;z-index:2;background:var(--raise);
+    }
+    .avatar-fb{
+      position:absolute;inset:6px;border-radius:50%;background:var(--raise);
+      display:none;align-items:center;justify-content:center;font-size:42px;z-index:2;
     }
 
-    /* mask gap */
-    .avatar-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 2px;
-      background: var(--card);
-      border-radius: 50%;
-      z-index: 1;
+    /* ══ STATUS ══ */
+    .status{
+      display:inline-flex;align-items:center;gap:9px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.16);
+      padding:7px 22px;border-radius:100px;
+      font-family:var(--mono);font-size:0.72rem;
+      color:var(--pearl);letter-spacing:1.2px;text-transform:uppercase;
+      margin-bottom:1.6rem;
+      box-shadow:0 0 18px rgba(255,255,255,0.04);
+    }
+    .dot{
+      width:7px;height:7px;border-radius:50%;
+      background:var(--white);
+      box-shadow:0 0 10px rgba(255,255,255,1),0 0 20px rgba(255,255,255,.5);
+      animation:pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.8);}}
+
+    /* ══ NAME ══ */
+    .name{
+      font-family:var(--serif);
+      font-size:4.4rem;font-weight:300;
+      color:var(--white);text-align:center;
+      line-height:1.02;letter-spacing:.5px;
+      margin-bottom:.9rem;
+    }
+    .name span{font-style:italic;color:var(--pearl);}
+
+    /* ══ SPEC ══ */
+    .spec-row{
+      display:flex;flex-wrap:wrap;justify-content:center;
+      gap:7px;margin-bottom:2.2rem;
+    }
+    .spec{
+      font-family:var(--mono);font-size:0.68rem;
+      letter-spacing:2px;text-transform:uppercase;
+      color:var(--stone);padding:6px 16px;
+      border:1px solid var(--edge);border-radius:100px;
+      background:rgba(255,255,255,0.025);
     }
 
-    @keyframes spin { to { transform:rotate(360deg); } }
-
-    .avatar-img {
-      position: absolute;
-      inset: 6px;
-      width: calc(100% - 12px);
-      height: calc(100% - 12px);
-      border-radius: 50%;
-      object-fit: cover;
-      z-index: 2;
-      background: var(--raise);
+    /* ══ RULE ══ */
+    .rule{
+      width:100%;height:1px;
+      background:linear-gradient(90deg,transparent,var(--edgehi),transparent);
+      margin-bottom:2.2rem;
     }
 
-    .avatar-fb {
-      position: absolute;
-      inset: 6px;
-      border-radius: 50%;
-      background: var(--raise);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      font-size: 42px;
-      z-index: 2;
-    }
-
-    /* ══════════════════════
-       2. STATUS — PROMINENT
-    ══════════════════════ */
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.16);
-      padding: 7px 22px;
-      border-radius: 100px;
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--pearl);
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-bottom: 1.6rem;
-      box-shadow: 0 0 18px rgba(255,255,255,0.04);
-    }
-
-    .dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--white);
-      box-shadow: 0 0 10px rgba(255,255,255,1), 0 0 20px rgba(255,255,255,.5);
-      animation: pulse 2.5s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%,100% { opacity:1; transform:scale(1); }
-      50%      { opacity:.35; transform:scale(.8); }
-    }
-
-    /* ══════════════════════
-       3. NAME — LUXURY
-    ══════════════════════ */
-    .name {
-      font-family: var(--serif);
-      font-size: 4.4rem;
-      font-weight: 300;
-      color: var(--white);
-      text-align: center;
-      line-height: 1.02;
-      letter-spacing: .5px;
-      margin-bottom: .9rem;
-    }
-
-    .name span {
-      font-style: italic;
-      color: var(--pearl);
-    }
-
-    /* ══════════════════════
-       4. SPECIALISATION
-    ══════════════════════ */
-    .spec-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 7px;
-      margin-bottom: 2.2rem;
-    }
-
-    .spec {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--stone);
-      padding: 6px 16px;
-      border: 1px solid var(--edge);
-      border-radius: 100px;
-      background: rgba(255,255,255,0.025);
-    }
-
-    /* ══════════════════════
-       RULE
-    ══════════════════════ */
-    .rule {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--edgehi), transparent);
-      margin-bottom: 2.2rem;
-    }
-
-    /* ══════════════════════
-       5. CV BUTTON
-    ══════════════════════ */
+    /* ══ CV BUTTON — LUXURY ══ */
     .cv-btn {
       display: inline-flex;
       align-items: center;
-      gap: 11px;
-      background: var(--white);
-      color: var(--bg);
-      font-family: var(--sans);
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: .4px;
-      padding: 14px 34px;
+      gap: 12px;
+      position: relative;
+      padding: 15px 40px;
       border-radius: 100px;
       text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: all .28s var(--ease);
-      margin-bottom: 2.4rem;
-      box-shadow: 0 8px 28px rgba(255,255,255,0.12);
-      position: relative;
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--white);
+      margin-bottom: 2.6rem;
       overflow: hidden;
+      transition: all .3s var(--ease);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.9),
+        0 8px 32px rgba(255,255,255,0.15),
+        0 2px 8px rgba(0,0,0,0.6);
     }
 
-    .cv-btn::before {
+    /* spinning arc around CV button */
+    .cv-btn-wrap {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2.6rem;
+    }
+
+    /* remove margin from btn itself now wrapper handles it */
+    .cv-btn { margin-bottom: 0; }
+
+    .cv-btn-wrap::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.18) 100%);
-      opacity: 0;
-      transition: opacity .25s ease;
+      inset: -5px;
+      border-radius: 100px;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        rgba(255,255,255,0.9) 12%,
+        transparent 28%,
+        rgba(255,255,255,0.05) 55%,
+        transparent 68%,
+        rgba(255,255,255,0.9) 88%,
+        transparent 100%
+      );
+      animation: spin 4s linear infinite;
+      z-index: 0;
     }
 
-    .cv-btn i { font-size: .95rem; transition: transform .3s var(--ease); }
+    .cv-btn-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 100px;
+      background: var(--card);
+      z-index: 1;
+    }
+
+    .cv-btn { z-index: 2; }
+
+    /* inner shimmer sweep */
+    .cv-btn .shine {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg,
+        transparent 30%,
+        rgba(255,255,255,0.35) 50%,
+        transparent 70%
+      );
+      transform: translateX(-100%);
+      transition: transform .55s ease;
+    }
+
+    .cv-btn:hover .shine { transform: translateX(100%); }
+
+    .cv-btn i {
+      font-size: 1rem;
+      transition: transform .3s var(--ease);
+    }
 
     .cv-btn:hover {
       background: var(--pearl);
       transform: translateY(-3px);
-      box-shadow: 0 16px 40px rgba(255,255,255,0.18);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.8),
+        0 16px 48px rgba(255,255,255,0.22),
+        0 4px 12px rgba(0,0,0,0.6);
     }
 
-    .cv-btn:hover::before { opacity: 1; }
     .cv-btn:hover i { transform: translateY(2px); }
+    .cv-btn:active  { transform: translateY(0); }
 
-    .cv-btn:active { transform: translateY(0); }
-
-    /* ══════════════════════
-       6. SOCIAL ICONS
-    ══════════════════════ */
-    .social-label {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--ghost);
-      margin-bottom: 1.2rem;
-      text-align: center;
+    /* ══ SOCIAL ══ */
+    .social-label{
+      font-family:var(--mono);font-size:0.62rem;
+      letter-spacing:4px;text-transform:uppercase;
+      color:var(--ghost);margin-bottom:1.2rem;text-align:center;
     }
 
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      width: 100%;
+    .social-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:10px;width:100%;
     }
 
+    /* each social card */
     .soc {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      padding: 20px 10px 16px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
+      gap: 10px;
+      padding: 22px 10px 17px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.11);
       border-radius: 18px;
       text-decoration: none;
-      color: var(--stone);
+      color: var(--white);           /* WHITE icons by default */
       transition: all .3s var(--ease);
       position: relative;
       overflow: hidden;
     }
 
-    /* shimmer on hover */
-    .soc::after {
+    /* spinning arc — hidden by default, shown on hover */
+    .soc::before {
       content: '';
       position: absolute;
-      top: 0; left: -100%; width: 60%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.05), transparent);
-      transition: left .4s ease;
+      inset: -3px;
+      border-radius: 18px;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        rgba(255,255,255,0.85) 10%,
+        transparent 22%,
+        rgba(255,255,255,0.04) 50%,
+        transparent 62%,
+        rgba(255,255,255,0.85) 88%,
+        transparent 100%
+      );
+      opacity: 0;
+      animation: spin 3.5s linear infinite;
+      transition: opacity .3s ease;
+      z-index: 0;
     }
 
-    .soc:hover::after { left: 150%; }
+    /* mask the gap */
+    .soc .inner {
+      position: absolute;
+      inset: 1px;
+      background: rgba(15,15,15,0.95);
+      border-radius: 17px;
+      z-index: 1;
+    }
+
+    .soc i, .soc .soc-name {
+      position: relative;
+      z-index: 2;
+    }
 
     .soc i {
-      font-size: 1.75rem;
+      font-size: 1.9rem;
+      line-height: 1;
+      color: var(--white);
       transition: transform .3s var(--ease), color .3s;
     }
 
     .soc-name {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 500;
-      letter-spacing: .4px;
+      letter-spacing: .5px;
+      color: var(--silver);
       transition: color .3s;
     }
 
+    .soc:hover::before { opacity: 1; }
+
     .soc:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.2);
-      transform: translateY(-5px);
-      box-shadow: 0 16px 36px rgba(0,0,0,.7);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,.8);
+      border-color: transparent;
     }
 
-    .soc:hover i       { transform: scale(1.15); }
-    .soc:hover .soc-name { color: var(--pearl); }
+    .soc:hover i          { transform: scale(1.18); color: var(--white); }
+    .soc:hover .soc-name  { color: var(--white); }
 
-    /* brand tints */
-    .soc.github:hover   i { color:#fff; }
-    .soc.x:hover        i { color:#d0d0d0; }
-    .soc.linkedin:hover i { color:#6db3df; }
-    .soc.telegram:hover i { color:#5bc8f5; }
-    .soc.instagram:hover i { color:#e07898; }
-    .soc.email:hover    i { color:#f09878; }
-
-    /* ══════════════════════
-       RESPONSIVE
-    ══════════════════════ */
-    @media (max-width: 520px) {
-      body { padding: 1.2rem .8rem; }
-      .card { padding: 2.2rem 1.6rem 2.6rem; border-radius: 26px; }
-      .name { font-size: 3.2rem; }
-      .social-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
-      .soc { padding: 16px 8px 13px; }
-      .soc i { font-size: 1.5rem; }
+    /* ══ RESPONSIVE ══ */
+    @media(max-width:520px){
+      body{padding:1.2rem .8rem;}
+      .card{padding:2.2rem 1.5rem 2.6rem;border-radius:26px;}
+      .name{font-size:3.2rem;}
+      .soc{padding:17px 8px 13px;}
+      .soc i{font-size:1.6rem;}
     }
-
-    @media (max-width: 360px) {
-      .social-grid { grid-template-columns: repeat(2,1fr); }
+    @media(max-width:360px){
+      .social-grid{grid-template-columns:repeat(2,1fr);}
     }
   </style>
 </head>
@@ -424,7 +383,7 @@
 <main class="card" role="main" itemscope itemtype="https://schema.org/Person">
 
   <!-- 1 · Avatar -->
-  <div class="avatar-wrap" aria-label="Profile picture">
+  <div class="avatar-wrap">
     <img class="avatar-img" src="profile.jpg" alt="Ali Al-Mansouri"
          onerror="this.style.display='none';document.querySelector('.avatar-fb').style.display='flex';" />
     <div class="avatar-fb" aria-hidden="true">🛡</div>
@@ -442,7 +401,7 @@
   </h1>
 
   <!-- 4 · Specialisation -->
-  <div class="spec-row" role="list" aria-label="Specialisations">
+  <div class="spec-row" role="list">
     <span class="spec" role="listitem">Web Security</span>
     <span class="spec" role="listitem">Android Security</span>
     <span class="spec" role="listitem">BAC · IDOR · Business Logic</span>
@@ -451,11 +410,14 @@
   <!-- divider -->
   <div class="rule" aria-hidden="true"></div>
 
-  <!-- 5 · CV Button -->
-  <a href="cv.pdf" class="cv-btn" download aria-label="Download CV">
-    <i class="fa-solid fa-arrow-down-to-line" aria-hidden="true"></i>
-    Download CV
-  </a>
+  <!-- 5 · CV Button with spinning ring -->
+  <div class="cv-btn-wrap">
+    <a href="cv.pdf" class="cv-btn" download aria-label="Download CV">
+      <span class="shine" aria-hidden="true"></span>
+      <i class="fa-solid fa-arrow-down-to-line" aria-hidden="true"></i>
+      Download CV
+    </a>
+  </div>
 
   <!-- 6 · Social -->
   <p class="social-label">Connect</p>
@@ -464,41 +426,47 @@
     <a href="https://github.com/AliAlMansori"
        class="soc github" target="_blank" rel="noopener noreferrer"
        aria-label="GitHub" itemprop="sameAs">
-      <i class="fa-brands fa-github" aria-hidden="true"></i>
+      <span class="inner" aria-hidden="true"></span>
+      <i class="fa-brands fa-github"></i>
       <span class="soc-name">GitHub</span>
     </a>
 
     <a href="https://x.com/username"
        class="soc x" target="_blank" rel="noopener noreferrer"
        aria-label="X / Twitter" itemprop="sameAs">
-      <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+      <span class="inner" aria-hidden="true"></span>
+      <i class="fa-brands fa-x-twitter"></i>
       <span class="soc-name">X</span>
     </a>
 
     <a href="https://linkedin.com/in/username"
        class="soc linkedin" target="_blank" rel="noopener noreferrer"
        aria-label="LinkedIn" itemprop="sameAs">
-      <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+      <span class="inner" aria-hidden="true"></span>
+      <i class="fa-brands fa-linkedin-in"></i>
       <span class="soc-name">LinkedIn</span>
     </a>
 
     <a href="https://t.me/username"
        class="soc telegram" target="_blank" rel="noopener noreferrer"
        aria-label="Telegram">
-      <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+      <span class="inner" aria-hidden="true"></span>
+      <i class="fa-brands fa-telegram"></i>
       <span class="soc-name">Telegram</span>
     </a>
 
     <a href="https://instagram.com/username"
        class="soc instagram" target="_blank" rel="noopener noreferrer"
        aria-label="Instagram" itemprop="sameAs">
-      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      <span class="inner" aria-hidden="true"></span>
+      <i class="fa-brands fa-instagram"></i>
       <span class="soc-name">Instagram</span>
     </a>
 
     <a href="mailto:your.email@example.com"
        class="soc email" aria-label="Email">
-      <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+      <span class="inner" aria-hidden="true"></span>
+      <i class="fa-regular fa-envelope"></i>
       <span class="soc-name">Email</span>
     </a>
 
